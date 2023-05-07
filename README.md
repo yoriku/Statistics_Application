@@ -3,15 +3,18 @@
 - This is a test and classification application using Flask. Nonparametric and parametric tests are supported, and logistic regression is used for classification.  
 - In the nonparametric case, the Brunner-Munzel test and Cliff's Delta are used, while the Student's t-test and Cohen's d are used in the parametric case.  
 - When the number of samples to be classified is less than 50, Leave One Out is used, and when the number is greater than 50, 4-HOLD cross-validation is used to verify generalization performance.  
+**Support multi-class classification**  
   
 （Flaskを用いた統計アプリケーションです．  
 Non-parametric検定とParametric検定に対応しており，ロジステック回帰を使用することで分類精度の確認が可能です．  
-今回は，以前作成したものを多クラス分類に対応させて公開しております．）
-**Support multi-class classification**
+今回は，以前作成したものを多クラス分類に対応させて公開しております．）  
 
+## Input form image
 ![入力画面の例](doc/input.png "入力画面の例")
 
+## Example of output
 ![出力の例](doc/output.png "出力の例")
+  
 # Getting start
 
 1. Install Python library
