@@ -15,6 +15,15 @@ Non-parametric検定とParametric検定に対応しており，ロジステッ�
 ## Example of output
 ![出力の例](doc/output.png "出力の例")
   
+# Reference
+## Target row name
+Column Name of Objective Variable  
+## Input file
+CSV file to be input to the statistics application. indexes, etc. should be deleted beforehand.
+## Parametric or Non-parametric
+The type of statistics can be changed: Non-parametric uses the Brunner-Munzel test and Cliff's delta; Parametric uses the Student's t-test and Cohen's d.
+## Use weight or Dont use weight
+When performing logistic regression, you can change whether or not weights are assigned to each class. Usually, weights are assigned when the classes are unbalanced, and not otherwise.  
 # Getting start
 
 1. Install Python library
