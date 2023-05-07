@@ -35,8 +35,7 @@ def calc_stat(df, target_name, mode="nonpara"):
         for item in itertools.combinations(items, 2):
             df1 = df[df[target_name] == item[1]][head].values
             df0 = df[df[target_name] == item[0]][head].values
-            print(es.cohen_d(df1, df0))
-            
+
             if(mode == "nonpara"):
                 data =  [f"{head}({item[1]} vs {item[0]})",
                         brunnermunzel(df1, df0)[1],

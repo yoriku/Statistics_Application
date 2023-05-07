@@ -1,3 +1,4 @@
+import itertools
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import LeaveOneOut, StratifiedKFold
 from sklearn.metrics import confusion_matrix, accuracy_score, recall_score, precision_score, f1_score, matthews_corrcoef
@@ -50,9 +51,10 @@ def mode_hold(X, y, class_weight):
         # fit model
         model.fit(X_train, y_train)
         # predict test data
-        pred.append(model.predict(X_test))
-        test.append(y_test)
-    return np.array(pred).flatten(), np.array(test).flatten()
+        pred.append(model.predict(X_test).tolist())
+        test.append(y_test.tolist())
+
+    return list(itertools.chain.from_iterable(pred)), list(itertools.chain.from_iterable(test))
 
 def calc_metric(test, pred, label):
     cm = confusion_matrix(test, pred, labels=label)
