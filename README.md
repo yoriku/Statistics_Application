@@ -1,10 +1,10 @@
-# Statistics_Application_Using_Flask
-Statistics application using Flask  
-This is a test and classification application using Flask. Nonparametric and parametric tests are supported, and logistic regression is used for classification.  
-In the nonparametric case, the Brunner-Munzel test and Cliff's Delta are used, while the Student's t-test and Cohen's d are used in the parametric case.  
-When the number of samples to be classified is less than 50, Leave One Out is used, and when the number is greater than 50, 4-HOLD cross-validation is used to verify generalization performance.
+# Statistics_Application
+- Statistics application using Flask  
+- This is a test and classification application using Flask. Nonparametric and parametric tests are supported, and logistic regression is used for classification.  
+- In the nonparametric case, the Brunner-Munzel test and Cliff's Delta are used, while the Student's t-test and Cohen's d are used in the parametric case.  
+- When the number of samples to be classified is less than 50, Leave One Out is used, and when the number is greater than 50, 4-HOLD cross-validation is used to verify generalization performance.
 
-**Currently, only 2-class classification with 0 and 1 as the objective variable is supported. Support for other classes will be added in the future.**
+**Support multi-class classification**
 
 ![入力画面の例](doc/input.png "入力画面の例")
 
