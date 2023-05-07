@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Statistics Application</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <h1 class="text-center my-3">Enter data</h1>
+    <form method="post" enctype="multipart/form-data" action="{{ url_for('index') }}">
+        <div class="container-lg">
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <!-- target row name -->
+                    <div class="form-outline mt-3">
+                        <input type="text" id="target" name="target_name" value="target" class="form-control" />
+                        <label class="form-label" for="target">Target row name</label>
+                    </div>
+            
+                    <!-- input File -->
+                    <input type="file" name="file" class="form-control mt-3">
+                </div>
+                <div class="d-grid col-md-4">
+                    <!-- nonrapa or patametric -->
+                    <div class="btn-group mt-3">
+                        <input type="radio" class="btn-check" id="Parametric" name="stat_mode" value="1" checked />
+                        <label class="btn btn-light" for="Parametric">Parametric</label>
+
+                        <input type="radio" class="btn-check" id="NONParametric" name="stat_mode" value="0">
+                        <label class="btn btn-light" for="NONParametric">Non-Parametric</label>
+                    </div>
+
+                    <!-- classification -->
+                    <div class="btn-group mt-3">
+                        <input type="radio" class="btn-check" id="class_w" name="class_weight" value="1" checked />
+                        <label class="btn btn-light" for="class_w">Use Weight</label>
+
+                        <input type="radio" class="btn-check" id="class_w_n" name="class_weight" value="0">
+                        <label class="btn btn-light" for="class_w_n">Dont Use Weight</label>
+                    </div>
+                </div>
+                <div class="d-grid col-md-8 my-3">
+                    <input type="submit" value="Upload" class="btn btn-primary">
+                </div>
+
+            </div>
+
+        </div>
+        
+
+
+
+    </form>
+
+
+    {% if show %}
+    <div class="container-lg">
+
+        {{ graph|safe }}
+
+        <div class="row">
+            <div class="col-lg-8">
+                <table class="table table-striped table-sm">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="fw-bold text-break">Index Name</th>
+                            <th scope="col" class="fw-bold">p_value</th>
+                            <th scope="col" class="fw-bold">Effect size</th>
+                            <th scope="col" class="fw-bold">Effect indication</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in rows %}
+                        <tr>
+                            <td scope="row" class="fw-bold">{{ row[0] }}</td>
+                            <td>{{ '{:.5f}'.format(row[1]) }}</td>
+                            <td>{{ '{:.5f}'.format(row[2]) }}</td>
+                            <td>{{ row[3] }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-lg-4">
+
+                {{ graph_cm|safe }}
+
+                <table class="table table-striped table-sm">
+                    <tbody>
+                        {% for name, var in metr %}
+                        <tr>
+                            <td scope="row" class="fw-bold">{{ name }}</td>
+                            <td>{{ '{:.5f}'.format(var) }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    {% else %}
+
+    <div class="container-lg">
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <p class="fs-3 text-center">{{ error }}</p>
+                <img src="{{ url_for('static', filename='img/Flask.svg') }}">
+            </div>
+        </div>
+    </div>
+
+    {% endif %}
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js" ></script>
+</body>
+</html>
