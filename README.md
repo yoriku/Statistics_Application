@@ -11,7 +11,7 @@
 ![出力の例](doc/output.png "出力の例")
 # Getting start
 
-## Install Python library
+1. Install Python library
 ~~~ python
 pip install flask
 pip install pandas
@@ -19,17 +19,29 @@ pip install scipy
 pip install plotly
 ~~~
 
-## Execute main.py
+2. Execute main.py
 ~~~ python
 python main.py
 ~~~
 
-## Access Local Page
+3. Access Local Page
 For example
 127.0.0.1:5000
 
-## Submit your csv file
+4. Submit your csv file
 
 **Have to need target row (target variable 0 and 1) in csv file**
 
-## Press UPLOAD button
+5. Press UPLOAD button
+
+## License
+
+GNU General Public License version 2.0
+
+## Special Thanks
+
+Using Cliff's Delta library
+https://github.com/neilernst/cliffsDelta
+
+Made this program 
+shino-shino
