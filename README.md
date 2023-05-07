@@ -40,8 +40,6 @@ GNU General Public License version 2.0
 
 ## Special Thanks
 
-Using Cliff's Delta library
-https://github.com/neilernst/cliffsDelta
+Using Cliff's Delta library. Rep url is https://github.com/neilernst/cliffsDelta
 
-Made this program 
-shino-shino
+Made this program with shino-shino
