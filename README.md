@@ -32,6 +32,7 @@ pip install flask
 pip install pandas
 pip install scipy
 pip install plotly
+pip install scikit-learn
 ~~~
 
 2. Execute main.py
