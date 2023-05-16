@@ -46,7 +46,8 @@ For example
 
 4. Submit your csv file
 
-**Have to need target row (target variable 0 and 1) in csv file**
+**Have to need target row (e.x. target variable 0 and 1) in csv file**  
+Multi-class labels and non-numeric labels can also be entered.
 
 5. Press UPLOAD button
 
